@@ -1,0 +1,50 @@
+.invisibleClass{
+    display:none;
+}
+.generalBackground{
+    background-image: url("../images/background.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin:0;
+    padding:1%;
+    position: inherit;
+}
+.loginHead{
+    color:azure;
+}
+.loginInputs{
+    font-weight:bold;
+    width:13%;
+    color:rgba(0, 0, 0, .6);
+}
+.roleProfile{
+    position:absolute;
+    width:30%;
+    margin-left:84%;
+}
+.navPosition{
+    position:absolute;
+    width:30%;
+    margin-left:60px
+}
+.logoPosition{
+    position:absolute;
+    width:30%;
+    margin-left:0
+}
+.logoSize{
+    width: 9%;
+    height: 9%;
+}
+.roleImageSize{
+    width: 9%;
+    height: 9%;
+}
+.incorrectInLogin{
+    margin-top:1%;
+    color:rgb(7,65,118);
+    padding:0;
+    font-weight:bold;
+}
+/*.navbar-defaultA {background-color: rgba(160,227,240,0.4);
+}*/

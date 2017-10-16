@@ -1,0 +1,23 @@
+
+
+<div >
+
+    <form  ng-app="fileUpload"  name="form">
+        <img ngf-thumbnail="file" class="imageUpload"><br>
+        name : <input type="text"  ng-model="student.name" class="form-control" required />
+        phone : <input type="text"  ng-model="student.phone" class="form-control" required />
+        email : <input type="email"  ng-model="student.email" class="form-control" required />
+        <span class="addImage">
+        <button class="btn btn-primary" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+                ngf-accept="'image/*'" ngf-max-size="1MB" ngf-min-height="100"
+                ngf-resize="{width: 430, height: 450}" ng-click="imageSelected()">Select image</button>
+            <label class="alertSize">&nbsp maximum size: 1MB</label>
+        </span>
+        <button type="submit" class="btn btn-primary" ng-click="addStudent()">add student</button>
+        <div ng-if="imageNotSelected" class="imageNotSelectedAlert">you need to select an image</div>
+    </form>
+
+    <div ng-repeat="course in courses" >
+        <input type="checkbox"  ng-model="objectForValueOfCheckbox[course.id]" value={{course.id}}/>&nbsp;{{course.name}}
+    </div>
+</div>

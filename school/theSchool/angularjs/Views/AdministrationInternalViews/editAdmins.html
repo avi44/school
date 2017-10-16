@@ -1,0 +1,32 @@
+
+<div >
+    <form  ng-app="fileUpload"  name="form">
+        <div ng-if="!file"><img  ng-src="{{admin.image}}" class="imageSize"/></div>
+        <img ngf-thumbnail="file" class="imageUpload"><br>
+        name : <input type="text"  ng-model="admin.name" class="form-control" required />
+        phone : <input type="text"  ng-model="admin.phone" class="form-control"  required />
+        email : <input type="email"  ng-model="admin.email" class="form-control"  required />
+        <div ng-if="roleIsOwner">
+        role : <input type="text"  ng-model="admin.role" class="form-control" required/>
+        user name : <input type="text" ng-model="admin.userName" class="form-control" required/>
+        password : <input type="text"  ng-model="admin.password" class="form-control" required/>
+        </div>
+        <span class="addImage">
+        <button class="btn btn-primary" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+                ngf-accept="'image/*'" ngf-max-size="1MB" ngf-min-height="100"
+                ngf-resize="{width: 430, height: 450}" >Select image</button>
+            <label class="alertSize">&nbsp maximum size: 1MB</label>
+        </span>
+        <button type="submit" class="btn btn-primary" ng-click="saveAdminChanges()">update admin</button>
+    </form>
+
+    <button ng-if="roleIsOwner" class="btn btn-primary" ng-click="warningOfDelete()">delete admin</button>
+    <div ng-if="deleteWarning">
+        <delete-obj dont-delete-the-obj="dontDeleteTheAdmin()"
+                    delete-the-obj="deleteTheAdmin()"
+                    disable-bool="isDeleteTheAdminClicked"
+                    obj-name="objName">
+        </delete-obj>
+    </div>
+</div>
+

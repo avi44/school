@@ -1,0 +1,29 @@
+
+<link rel="stylesheet" href="Style/administration.css">
+<div class="abg">
+
+    <h1 class="administrationHead">Administration</h1>
+
+    <div class="list">
+        <label class="lab">&nbsp admins: &nbsp &nbsp </label>
+        <button ng-if="roleIsOwner" id="ib" class="btn btn-info" ng-click="addAdmin()">+</button>
+        <div ng-repeat="admin in admins" class="display" >
+            <div ng-click="editAdmin(admin,$index)" class="btn btn-primary" class="btn-click-size" id="btnWidth">
+                <img ng-src="{{admin.image}}" class="imageInBtn"/>
+                name: {{admin.name}}
+                <br/>
+                phone: {{admin.phone}}
+                <br/>
+                email: {{admin.email}}
+                <br/>
+                role: {{admin.role}}
+                <br/>
+            </div>
+        </div>
+    </div>
+    <div class="containerInfo">
+        <nav></nav>
+        <ui-view ></ui-view>
+    </div>
+</div>
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApplication">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="Style/app.css">
+
+</head>
+<body class="generalBackground">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div  class="logoPosition">
+            <img ng-src="images/school1.jpg"  class="logoSize"/>
+            </div>
+            <div class="navPosition">
+            <a class="navbar-brand" ui-sref="login" ng-if="isLogoute">
+            Login
+            </a>
+            <a class="navbar-brand" ui-sref="School" ng-if="isLogin">
+                School
+            </a>
+            <a class="navbar-brand" ui-sref="Administration" ng-if="isAdmin">
+                Administration
+            </a>
+            </div>
+            <div class="roleProfile" ng-if="isLogin">
+                <a class="navbar-brand" ui-sref="Logout" >
+                    Logout
+                </a>
+                &nbsp{{name}},
+                {{role}}&nbsp &nbsp
+                <img ng-src="{{image}}" class="roleImageSize"/>
+            </div>
+        </div>
+    </div>
+</nav>
+<ui-view></ui-view>
+
+<!--Angular scripts -->
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
+
+
+<!--application scripts -->
+<script src="app.js"></script>
+
+<script src="Services/homeService.js"></script>
+<script src="Services/funcAndVarService.js"></script>
+<script src="Controllers/viewsControllers/studentCtrl.js"></script>
+<script src="Controllers/viewsControllers/courseCtrl.js"></script>
+<script src="Controllers/LogoutCtrl.js"></script>
+<script src="Controllers/SchoolCtrl.js"></script>
+<script src="Controllers/AdministrationCtrl.js"></script>
+<script src="Controllers/LoginCtrl.js"></script>
+<script src="Controllers/viewsControllers/numberOfStudentsViewCtrl.js"></script>
+<script src="Controllers/viewsControllers/addStudentCtrl.js"></script>
+<script src="Controllers/viewsControllers/addCourseCtrl.js"></script>
+<script src="Controllers/viewsControllers/editStudentCtrl.js"></script>
+<script src="Controllers/viewsControllers/editCourseCtrl.js"></script>
+<script src="Controllers/viewsControllers/numberOfAdminsCtrl.js"></script>
+<script src="Controllers/viewsControllers/editAdminsCtrl.js"></script>
+<script src="Controllers/viewsControllers/addAdminCtrl.js"></script>
+<script src="Directives/deleteObj/deleteObj.js"></script>
+
+</body>
+</html>

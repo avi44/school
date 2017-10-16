@@ -1,0 +1,50 @@
+{
+  "name": "ngnew",
+  "version": "1.1.1",
+  "description": "desc",
+  "main": "app.js",
+  "dependencies": {
+    "angular-ui-router": "^0.4.2",
+    "angular-material": "^1.1.3",
+    "jquery": "^3.1.1",
+    "angular": "^1.6.2",
+    "bootstrap": "^3.3.7"
+  },
+ 
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -a 0.0.0.0 -p 8000"
+      
+  },
+  "author": "",
+  "license": "ISC",
+  "configurations": [
+    {
+      
+        "name": "Launch app.js",
+      
+        "type": "node",
+     
+        "program": "app\\js\\app.js",
+   
+        "stopOnEntry": true,
+    
+        "args": [],
+   
+        "cwd": ".",
+        
+        "runtimeExecutable": "run.bat",
+        
+        "env": { }
+    }, 
+    {
+        "name": "Attach",
+        "type": "node",
+     
+        "address": "localhost",
+     
+        "port": 5858
+    }
+]
+}

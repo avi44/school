@@ -1,0 +1,31 @@
+
+
+<div >
+    <form  ng-app="fileUpload"  name="form">
+        <div ng-if="!file"><img  ng-src="{{student.image}}" class="imageSize"/></div>
+        <img ngf-thumbnail="file" class="imageUpload"><br>
+        name : <input type="text"  ng-model="student.name" class="form-control" required/>
+        phone : <input type="text"  ng-model="student.phone" class="form-control" required/>
+        email : <input type="email"  ng-model="student.email" class="form-control" required/>
+        <span class="addImage">
+        <button class="btn btn-primary" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+                ngf-accept="'image/*'" ngf-max-size="1MB" ngf-min-height="100"
+                ngf-resize="{width: 430, height: 450}" >Select image</button>
+            <label class="alertSize">&nbsp maximum size: 1MB</label>
+        </span>
+        <button type="submit" class="btn btn-primary" ng-click="saveStudentChanges()" >update student</button>
+    </form>
+
+    <button class="btn btn-primary" ng-click="warningOfDelete()">delete student</button>
+    <div ng-if="deleteWarning">
+        <delete-obj dont-delete-the-obj="dontDeleteTheStudent()"
+                    delete-the-obj="deleteTheStudent()"
+                    disable-bool="isDeleteTheStudentClicked"
+                    obj-name="objName">
+        </delete-obj>
+    </div>
+    <div ng-repeat="course in courses" >
+        <input type="checkbox"  ng-checked="course.check" ng-model="objectForValueOfCheckbox[course.id]" value={{course.id}}/>&nbsp;{{course.name}}
+    </div>
+</div>
+

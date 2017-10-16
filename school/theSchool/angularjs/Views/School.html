@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="Style/school.css" xmlns="http://www.w3.org/1999/html">
+<div >
+
+<h1 class="schoolHead">School</h1>
+
+    <div class="list">
+            <label class="lab">&nbsp courses: </label>
+        <button id="ib" class="btn btn-info" ng-click="goToAddCourse()">+</button>
+        <div ng-repeat="course in courses" class="display">
+            <div ng-click="showCourse(course,courses,$index)"  class="btn btn-primary" class="btn-click-size" id="btnWidth">
+            <img ng-src="{{course.image}}" class="imageInBtn"/>
+                name: {{course.name}}
+                <br/>
+            </div>
+            </div>
+
+
+    </div>
+
+    <div class="list" >
+        <label class="lab">&nbsp students: </label>
+        <button id="ib1" class="btn btn-info" ng-click="goToAddStudent()">+</button>
+        <div ng-repeat="student in students" class="display">
+            <div ng-click="showStudent(student,courses,$index)" class="btn btn-primary" class="btn-click-size" id="btnWidth1">
+                <img ng-src="{{student.image}}" class="imageInBtn"/>
+            name: {{student.name}}
+                <br/>
+            phone: {{student.phone}}
+
+            </div>
+        </div>
+    </div>
+    <div class="containerInfo">
+    <ui-view ></ui-view>
+    </div>
+</div>
+
+
+
+
+
+

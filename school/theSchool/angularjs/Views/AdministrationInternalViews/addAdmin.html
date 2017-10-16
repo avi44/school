@@ -1,0 +1,22 @@
+
+
+<div >
+    <form  ng-app="fileUpload"  name="form">
+        <img ngf-thumbnail="file" class="imageUpload"><br>
+        name : <input type="text" ng-model="admin.name" class="form-control" required/>
+        phone : <input type="text" ng-model="admin.phone" class="form-control" required/>
+        email : <input type="email" ng-model="admin.email" class="form-control" required/>
+        role : <input type="text" ng-model="admin.role" class="form-control" required/>
+        user name : <input type="text" ng-model="admin.userName" class="form-control" required/>
+        password : <input type="text" ng-model="admin.password" class="form-control" required/>
+        <span class="addImage">
+        <button class="btn btn-primary" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+                ngf-accept="'image/*'" ngf-max-size="1MB" ngf-min-height="100"
+                ngf-resize="{width: 430, height: 450}" ng-click="imageSelected()">Select image</button>
+            <label class="alertSize">&nbsp maximum size: 1MB</label>
+        </span>
+        <button type="submit" class="btn btn-primary" ng-click="addAdmin()">add admin</button>
+        <div ng-if="imageNotSelected" class="imageNotSelectedAlert">you need to select an image</div>
+    </form>
+
+</div>

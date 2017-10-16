@@ -1,0 +1,30 @@
+
+
+<div >
+    <form  ng-app="fileUpload"  name="form">
+        <div ng-if="!file"><img  ng-src="{{course.image}}" class="imageSize"/></div>
+        <img ngf-thumbnail="file" class="imageUpload"><br>
+        name : <input type="text"  ng-model="course.name" class="form-control" required />
+        description : <input type="text"  ng-model="course.description" class="form-control" required />
+        <span class="addImage">
+        <button class="btn btn-primary" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
+                ngf-accept="'image/*'" ngf-max-size="1MB" ngf-min-height="100"
+                ngf-resize="{width: 430, height: 450}" >Select image</button>
+            <label class="alertSize">&nbsp maximum size: 1MB</label>
+        </span>
+        <button type="submit" class="btn btn-primary" ng-click="saveCourseChanges()" >update course</button>
+    </form>
+
+    <div ng-if="thereIsStudents">
+    number of students: {{course.students.length}}
+    </div>
+    <button ng-if="thereIsNotStudents" class="btn btn-primary" ng-click="warningOfDelete()">delete course</button>
+        <div ng-if="deleteWarning">
+            <delete-obj dont-delete-the-obj="dontDeleteTheCourse()"
+                        delete-the-obj="deleteTheCourse()"
+                        disable-bool="isDeleteTheCourseClicked"
+                        obj-name="objName">
+            </delete-obj>
+        </div>
+</div>
+
